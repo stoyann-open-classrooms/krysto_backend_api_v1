@@ -61,8 +61,11 @@ const PartnerSchema = new mongoose.Schema(
       enum: [
         "Association",
         "Revendeur",
-        "Fournisseur",
+        "Fournisseur Plastique",
         "Institution",
+        "Collecte de déchets",
+        "Entreprise economie circulaire",
+        "Entreprise engagée dans le recyclage",
         "Autres",
       ],
     },

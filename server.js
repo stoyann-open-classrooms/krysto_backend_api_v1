@@ -4,6 +4,9 @@ const dotenv = require("dotenv");
 const colors = require("colors");
 //import middlewares
 const morgan = require("morgan");
+const errorHandler= require('./middlewares/error.js')
+
+
 // load config DB
 const connectDB = require("./config/db");
 
@@ -19,6 +22,9 @@ const partners = require("./routes/partners");
 // initialize express  application
 const app = express();
 
+// Body parser
+app.use(express.json())
+
 // Dev logging Middleware
 if (process.env.NODE_ENV === "development") {
   app.use(morgan("dev"));
@@ -26,6 +32,8 @@ if (process.env.NODE_ENV === "development") {
 
 //Mount routers
 app.use("/krysto/api/v1/partners", partners);
+
+app.use(errorHandler)
 
 const PORT = process.env.PORT || 5000;
 
