@@ -1,0 +1,13 @@
+[
+    {
+      "name": "planche",
+      "refference": "PL8975",
+      "description": "",
+      "weight_GR": 10,
+      "stock":34,
+      "colors": ["Mother Earth", "Sky blue", "Purple Nebula", "Dark matter", "Solar Flare", "Galaxy Zero", "Jupiter Storm"],
+      "category": ["construction", "Mode", "décoration interieur", "Objet du quotidient", "Autres"]
+    }
+   
+]
+  
