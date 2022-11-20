@@ -9,8 +9,12 @@ const {
   getPartnersInRadius,
 } = require("../controllers/partners");
 
-
+// Includes other ressource routers
+const requestRouter = require('./requests')
 const router = express.Router();
+
+// Re-route into other ressource router  
+router.use('/:partnerId/requests', requestRouter)
 
 router.route("/radius/:zipcode/:distance").get(getPartnersInRadius);
 router.route("/").get( getPartners).post(createPartner);

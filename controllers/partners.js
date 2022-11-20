@@ -11,7 +11,7 @@ exports.getPartners = asyncHandler(async (req, res, next) => {
   let queryStr = JSON.stringify(req.query);
   queryStr.replace(/\b(gt|gte|lt|lte|in)\b/g, match => `$${match}`);
 
-  query = Partner.find(JSON.parse(queryStr));
+  query = Partner.find(JSON.parse(queryStr)).populate('requests');
 
   const partners = await query;
   res

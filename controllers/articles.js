@@ -1,6 +1,5 @@
 const ErrorResponse = require("../utils/errorResponse");
 const asyncHandler = require("../middlewares/async");
-const geocoder = require("../utils/geocoder");
 const Article = require("../models/Article");
 
 //@description:     Get all articles

@@ -117,4 +117,14 @@ PartnerSchema.pre('save', async function(next) {
 });
   
 
+// Reverse populate with virtuals
+PartnerSchema.virtual('requests', {
+    ref: 'Request',
+    localField: '_id',
+    foreignField: 'partner',
+    justOne: false
+  });
+
+
+
 module.exports = mongoose.model("Partner", PartnerSchema);

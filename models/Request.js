@@ -11,7 +11,23 @@ const RequestSchema = new mongoose.Schema(
         type: mongoose.Schema.ObjectId,
         ref: 'Partner',
         require: true
-    }
+    },
+    status: {
+        // Array of strings
+        type: [String],
+        required: true,
+        enum: [
+          "To do",
+          "Done",
+          "Archived",
+          "Fail",
+        ],
+        default: "To do"
+      },
+      urgent: {
+        type: Boolean,
+        default: false,
+      },
   },
   { timestamps: true },
   {
