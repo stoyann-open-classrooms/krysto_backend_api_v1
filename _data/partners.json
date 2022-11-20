@@ -20,7 +20,7 @@
     "type": ["Association", "Collecte de déchets"]
   },
   {
-    "_id": "637a3694e5fc335f796a4951",
+    "_id": "637a2e4122b12690420041a8",
     "name": "Réseaux Initiative Nouvelle-Calédonie",
     "description": "L’accompagnement proposé par Réseau Initiative Nouvelle-Calédonie est personnalisé : chaque projet est unique, chaque porteur de projet ouvre la porte de l’association quel que soit l’état d’avancement de son projet, Réseau Initiative Nouvelle-Calédonie l’oriente, lui apporte des réponses adaptées et lui propose un accompagnement sur mesure.",
     "website": "https://initiative-nc.com/",
@@ -31,17 +31,7 @@
   },
   {
     "_id": "637a3694e5fc335f796a4952",
-    "name": "Chambre de commerce et d'industrie de Nouvelle-Calédonie",
-    "description": "La CCI-NC agit pour développer la prospérité économique de la Nouvelle-Calédonie.Elle représente et défend les intérêts de ses ressortissants issus des secteurs du commerce, de l'industrie et des services. ",
-    "website": "https://www.cci.nc/",
-    "phone": "24.31.00",
-    "email": "cci@cci.nc",
-    "address": "15 rue de verdun 98849 Nouméa Nouvelle-Calédonie",
-    "type": [ "Institution"]
-  },
-  {
-    "_id": "637a3694e5fc335f796a4953",
-    "name": "Chambre de commerce et d'industrie de Nouvelle-Calédonie",
+    "name": "Chambre de commerce et d'industrie NC",
     "description": "La CCI-NC agit pour développer la prospérité économique de la Nouvelle-Calédonie.Elle représente et défend les intérêts de ses ressortissants issus des secteurs du commerce, de l'industrie et des services. ",
     "website": "https://www.cci.nc/",
     "phone": "24.31.00",
