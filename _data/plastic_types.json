@@ -1,10 +1,23 @@
 [
-    {
-      "name": "planche",
-      "scientific_name": "",
-      "number": "planche",
-      "description": ""
-    }
-   
-  
+  {
+    "_id": "637a2e4122b12690420041b5",
+    "name": "PET",
+    "description": "Le PET est un plastique très résistant qui peut être facilement reconnu pour son aspect transparent - toutes les bouteilles d'eau et de soda sont en PET ainsi que certains pots, peignes, sacs, sacs fourre-tout, tapis et cordes, et sont recyclés plus couramment. Récemment, le PET a été recyclé en fils et transformé en vêtements.",
+    "scientific_name": "Polyéthylène téréphtalate",
+    "identifier": 1
+  },
+  {
+    "_id": "637a2e4122b12690420041b6",
+    "name": "HDPE",
+    "description": "Le polyéthylène HDPE est principalement utilisé dans les secteurs alimentaire, médical et chimique. Il entre dans la fabrication de réservoirs, d’équipements sportifs, de prothèses, de produits d’emballage et de plusieurs autres éléments. ",
+    "scientific_name": "polyéthylène à haute densité",
+    "identifier": 2
+  },
+  {
+    "_id": "637a2e4122b12690420041b7",
+    "name": "PP",
+    "description": "Le PP est l'un des plastiques les plus couramment disponibles sur le marché, il est solide et peut généralement résister à des températures plus élevées. Le PP a une grande variété d'utilisations, mais il est systématiquement utilisé pour les produits qui entrent en contact avec les aliments et les boissons - tupperwares, boîtes de yaourt, bouteilles de sirop, etc.  ",
+    "scientific_name": "Polypropylène",
+    "identifier": 5
+  }
 ]

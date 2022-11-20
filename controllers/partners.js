@@ -1,13 +1,19 @@
 const ErrorResponse = require("../utils/errorResponse");
 const asyncHandler = require("../middlewares/async");
-const geocoder = require('../utils/geocoder');
+const geocoder = require("../utils/geocoder");
 const Partner = require("../models/Partner");
 
 //@description:     Get all partners
 //@ route:          GET /krysto/api/v1/partners
 //@access:          Public
 exports.getPartners = asyncHandler(async (req, res, next) => {
-  const partners = await Partner.find();
+  let query;
+  let queryStr = JSON.stringify(req.query);
+  queryStr.replace(/\b(gt|gte|lt|lte|in)\b/g, match => `$${match}`);
+
+  query = Partner.find(JSON.parse(queryStr));
+
+  const partners = await query;
   res
     .status(200)
     .json({ success: true, count: partners.length, data: partners });
@@ -66,9 +72,6 @@ exports.deletePartner = asyncHandler(async (req, res, next) => {
   res.status(200).json({ success: true, data: {} });
 });
 
-
-
-
 // @description      Get partners within a radius
 // @route            GET /api/v1/partners/radius/:zipcode/:distance
 // @access           Private
@@ -86,12 +89,12 @@ exports.getPartnersInRadius = asyncHandler(async (req, res, next) => {
   const radius = distance / 6378;
 
   const partners = await Partner.find({
-    location: { $geoWithin: { $centerSphere: [[lng, lat], radius] } }
+    location: { $geoWithin: { $centerSphere: [[lng, lat], radius] } },
   });
 
   res.status(200).json({
     success: true,
     count: partners.length,
-    data: partners
+    data: partners,
   });
 });

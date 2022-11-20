@@ -1,11 +1,25 @@
 [
-    {
-      "weight_KG": 20,
-      "remarque": "",
-      "colors": ["Bleu foncé", "Bleu clair", "Blanc", "Transparant", "Violet", "Vert", "Jaune", "Noir", "orange", "Mix" , "Autres" ],
-      "Washed": true
-    }
+  {
+    "_id": "637a2e4122b1269042004175",
+    "weight_KG": 20,
+    "remarque": "is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type",
+    "colors": [
+      "Mix"
+    ],
+    "Washed": true,
+    "partner": "637a2e4122b1269042004176",
+    "plastic_type": "637a2e4122b12690420041b6"
    
-  
+  },
+  {
+    "_id": "637a2e4122b1269042004177",
+    "weight_KG": 20,
+    "remarque": "is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type",
+    "colors": [
+      "Transparant"
+    ],
+    "Washed": true,
+    "partner": "637a2e4122b12690420041a6",
+    "plastic_type": "637a2e4122b12690420041b6"
+  }
 ]
-  
