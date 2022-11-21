@@ -20,6 +20,8 @@ connectDB();
 const partners = require("./routes/partners");
 const articles = require("./routes/articles");
 const requests = require("./routes/requests");
+const collects = require("./routes/collects");
+const plasticTypes = require("./routes/plastic_types");
 
 // initialize express  application
 const app = express();
@@ -36,6 +38,8 @@ if (process.env.NODE_ENV === "development") {
 app.use("/krysto/api/v1/partners", partners);
 app.use("/krysto/api/v1/articles", articles);
 app.use("/krysto/api/v1/requests", requests);
+app.use("/krysto/api/v1/collects", collects);
+app.use("/krysto/api/v1/plasticTypes", plasticTypes);
 
 app.use(errorHandler)
 

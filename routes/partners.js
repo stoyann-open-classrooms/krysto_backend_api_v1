@@ -11,10 +11,12 @@ const {
 
 // Includes other ressource routers
 const requestRouter = require('./requests')
+const collectRouter = require('./collects')
 const router = express.Router();
 
 // Re-route into other ressource router  
 router.use('/:partnerId/requests', requestRouter)
+router.use('/:partnerId/collects', collectRouter)
 
 router.route("/radius/:zipcode/:distance").get(getPartnersInRadius);
 router.route("/").get( getPartners).post(createPartner);

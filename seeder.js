@@ -44,7 +44,7 @@ const importData = async () => {
     await Partner.create(partners);
     await Article.create(articles);
     await Plastic_type.create(plastic_types);
-    await Collect.create(collects);
+    // await Collect.create(collects);
     await Request.create(requests);
     console.log('Data Imported...'.green.inverse);
     process.exit();

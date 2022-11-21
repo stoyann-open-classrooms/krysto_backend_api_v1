@@ -7,8 +7,7 @@
     "phone": "85.01.51",
     "email": "caledoclean.asso@gmail.com",
     "address": "23 rue du Dr Collard 98845 Nouméa",
-    "type": ["Association", "Collecte de déchets"],
-    "averageCost": 25
+    "type": ["Association", "Collecte de déchets"]
   },
   {
     "_id": "637a3071fcf9ca4e26104dc3",
@@ -18,8 +17,7 @@
     "phone": "78.64.45",
     "email": "oletri@now.nc",
     "address": "98800 Nouméa",
-    "type": ["Association", "Collecte de déchets"],
-    "averageCost": 1000
+    "type": ["Association", "Collecte de déchets"]
   },
   {
     "_id": "637a2e4122b12690420041a8",
@@ -29,8 +27,7 @@
     "phone": "27.40.14",
     "email": "contact@initiative-nc.com",
     "address": "27 rue de Sébastopol 98800 Nouméa",
-    "type": ["Association", "Institution"],
-    "averageCost": 45
+    "type": ["Association", "Institution"]
  
 
   },
@@ -42,8 +39,7 @@
     "phone": "24.31.00",
     "email": "cci@cci.nc",
     "address": "15 rue de verdun 98849 Nouméa",
-    "type": [ "Institution"],
-    "averageCost": 1000
+    "type": [ "Institution"]
 
   }
 

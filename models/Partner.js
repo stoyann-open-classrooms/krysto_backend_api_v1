@@ -75,7 +75,7 @@ const PartnerSchema = new mongoose.Schema(
       type: String,
       default: "no-photo.jpg",
     },
-    averageCost: Number,
+    recycled: Number,
     // createdAt: {
     //   type: Date,
     //   default: Date.now,

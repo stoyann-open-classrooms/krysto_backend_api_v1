@@ -5,7 +5,6 @@ const CollectSchema = new mongoose.Schema(
   {
     remarque: {
       type: String,
-      required: [true, "Please add description"],
       maxlength: [1000, "Name can not be more than 1000 characters"],
     },
 
@@ -35,7 +34,7 @@ const CollectSchema = new mongoose.Schema(
     },
     request: {
         type: mongoose.Schema.ObjectId,
-        ref: 'Request'
+        ref: 'Request',
     },
     partner: {
         type: mongoose.Schema.ObjectId,
@@ -44,7 +43,7 @@ const CollectSchema = new mongoose.Schema(
     },
     plastic_type: {
         type: mongoose.Schema.ObjectId,
-        ref: 'Plastic_types',
+        ref: 'Plastic_type',
         required: true
     }
   },
@@ -54,5 +53,47 @@ const CollectSchema = new mongoose.Schema(
     toObject: { virtuals: true },
   }
 );
+
+
+
+
+// Static method to get avg of course tuitions
+CollectSchema.statics.getAverageCost = async function(partnerId) {
+  console.log('calculating the average cost...'.blue);
+  const obj = await this.aggregate([
+    {
+      $match: { partner: partnerId }
+    },
+    {
+      $group: {
+        _id: '$partner',
+        recycled: { $avg: '$weight_KG' }
+      }
+    }
+  ]);
+  console.log(obj);
+
+  try {
+    await this.model('Partner').findByIdAndUpdate(partnerId, {
+      recycled: Math.ceil(obj[0].recycled / 10) * 10
+    });
+  } catch (err) {
+    console.error(err);
+  }
+};
+
+// Call getAverageCost after save
+CollectSchema.post('save', function() {
+  this.constructor.getAverageCost(this.partner);
+});
+
+// Call getAverageCost before remove
+CollectSchema.pre('remove', function() {
+  this.constructor.getAverageCost(this.partner);
+});
+
+
+
+
 
 module.exports = mongoose.model("Collect", CollectSchema);
