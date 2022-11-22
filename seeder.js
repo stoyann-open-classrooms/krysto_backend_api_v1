@@ -8,6 +8,7 @@ dotenv.config({ path: './config/config.env' });
 
 // Load models
 const Partner = require('./models/Partner');
+const User = require('./models/User');
 const Article = require('./models/Article');
 const Plastic_type = require('./models/Plastic_type');
 const Collect = require('./models/Collect');
@@ -23,6 +24,9 @@ mongoose.connect(process.env.MONGO_URI, {
 // Read JSON files
 const partners = JSON.parse(
   fs.readFileSync(`${__dirname}/_data/partners.json`, 'utf-8')
+);
+const users = JSON.parse(
+  fs.readFileSync(`${__dirname}/_data/users.json`, 'utf-8')
 );
 const articles = JSON.parse(
   fs.readFileSync(`${__dirname}/_data/articles.json`, 'utf-8')
@@ -41,10 +45,12 @@ const requests = JSON.parse(
 // Import into DB
 const importData = async () => {
   try {
+   
     await Partner.create(partners);
+    await User.create(users);
     await Article.create(articles);
     await Plastic_type.create(plastic_types);
-     await Collect.create(collects);
+    await Collect.create(collects);
     await Request.create(requests);
     console.log('Data Imported...'.green.inverse);
     process.exit();
@@ -57,6 +63,7 @@ const importData = async () => {
 const deleteData = async () => {
   try {
     await Partner.deleteMany();
+    await User.deleteMany();
     await Article.deleteMany();
     await Plastic_type.deleteMany();
     await Collect.deleteMany();

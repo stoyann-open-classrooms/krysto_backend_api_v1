@@ -11,17 +11,16 @@ const Request = require("../models/Request");
 //@access:          Public
 
 exports.getCollects = asyncHandler(async (req, res, next) => {
-if(req.params.partnerId) {
-  const collects = await Collect.find({partner : req.params.partnerId})
-  return res.status(200).json({
-    success: true,
-    count: collects.length,
-    data: collects
-  })
-} else {
-
-  res.status(200).status(200).json(res.advancedResults);
-}
+  if (req.params.partnerId) {
+    const collects = await Collect.find({ partner: req.params.partnerId });
+    return res.status(200).json({
+      success: true,
+      count: collects.length,
+      data: collects,
+    });
+  } else {
+    res.status(200).status(200).json(res.advancedResults);
+  }
 });
 
 //@description:     Get single collect
@@ -52,10 +51,8 @@ exports.getCollect = asyncHandler(async (req, res, next) => {
 
 exports.addCollect = asyncHandler(async (req, res, next) => {
   req.body.partner = req.params.partnerId;
- 
 
   const partner = await Partner.findById(req.params.partnerId);
-  
 
   if (!partner) {
     return next(
@@ -77,8 +74,6 @@ exports.addCollect = asyncHandler(async (req, res, next) => {
 //@access:          Private
 
 exports.updateCollect = asyncHandler(async (req, res, next) => {
-
-
   let collect = await Collect.findById(req.params.id);
 
   if (!collect) {
@@ -87,11 +82,11 @@ exports.updateCollect = asyncHandler(async (req, res, next) => {
       404
     );
   }
-  
+
   collect = await Collect.findByIdAndUpdate(req.params.id, req.body, {
     new: true,
-    runValidators: true
-  })
+    runValidators: true,
+  });
 
   res.status(200).json({
     success: true,
@@ -103,8 +98,6 @@ exports.updateCollect = asyncHandler(async (req, res, next) => {
 //@access:          Private
 
 exports.deleteCollect = asyncHandler(async (req, res, next) => {
-
-
   const collect = await Collect.findById(req.params.id);
 
   if (!collect) {
@@ -113,11 +106,10 @@ exports.deleteCollect = asyncHandler(async (req, res, next) => {
       404
     );
   }
-  await collect.remove
+  await collect.remove;
 
   res.status(200).json({
     success: true,
     data: {},
   });
 });
-

@@ -9,7 +9,6 @@ const Partner = require("../models/Partner");
 //@access:          Public
 
 exports.getRequests = asyncHandler(async (req, res, next) => {
- 
   res.status(200).json(res.advancedResults);
 });
 
@@ -63,8 +62,6 @@ exports.addRequest = asyncHandler(async (req, res, next) => {
 //@access:          Private
 
 exports.updateRequest = asyncHandler(async (req, res, next) => {
-
-
   let request = await Request.findById(req.params.id);
 
   if (!request) {
@@ -73,11 +70,11 @@ exports.updateRequest = asyncHandler(async (req, res, next) => {
       404
     );
   }
-  
+
   request = await Request.findByIdAndUpdate(req.params.id, req.body, {
     new: true,
-    runValidators: true
-  })
+    runValidators: true,
+  });
 
   res.status(200).json({
     success: true,
@@ -89,8 +86,6 @@ exports.updateRequest = asyncHandler(async (req, res, next) => {
 //@access:          Private
 
 exports.deleteRequest = asyncHandler(async (req, res, next) => {
-
-
   const request = await Request.findById(req.params.id);
 
   if (!request) {
@@ -99,11 +94,10 @@ exports.deleteRequest = asyncHandler(async (req, res, next) => {
       404
     );
   }
-  await request.remove
+  await request.remove;
 
   res.status(200).json({
     success: true,
     data: {},
   });
 });
-
