@@ -11,7 +11,8 @@ const router = express.Router();
 
 
 
-router.route("/").get(advancedResults(Plastic_type), getPlasticTypes).post(createPlasticType)
-router.route("/:id").get(getPlasticType).put(updatePlasticType).delete(deletePlasticType)
+
+router.route("/").get(advancedResults(Plastic_type), getPlasticTypes).post( createPlasticType)
+router.route("/:id").get(getPlasticType).put(updatePlasticType).delete( deletePlasticType)
 
 module.exports = router;

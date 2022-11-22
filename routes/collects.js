@@ -7,11 +7,12 @@ const {
   updateCollect,
   deleteCollect,
 } = require("../controllers/collects");
+const router = express.Router({ mergeParams: true });
+
 
 const Collect = require("../models/Collect");
 const advancedResults = require("../middlewares/advancedResults");
 
-const router = express.Router({ mergeParams: true });
 
 router
   .route("/")
@@ -22,7 +23,7 @@ router
     }),
     getCollects
   )
-  .post(addCollect);
-router.route("/:id").get(getCollect).put(updateCollect).delete(deleteCollect);
+  .post( addCollect);
+router.route("/:id").get(getCollect).put( updateCollect).delete( deleteCollect);
 
 module.exports = router;
