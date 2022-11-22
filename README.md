@@ -23,16 +23,16 @@ $ npm run dev
 ```
 
 ## ENDPOINTS
-l'api est disponible sur le port 5000
+l'api est disponible sur le port 5056
 
 
 ### `Exemples de routes`
-- http://localhost:5000/kryto/api/v1/auth
-- http://localhost:5000/krysto/api/v1/requests
-- http://localhost:5000/krysto/api/v1/articles
-- http://localhost:5000/krysto/api/v1/collects
-- http://localhost:5000/krysto/api/v1/plasticTypes
-- http://localhost:5000/krysto/api/v1/partners
+- http://localhost:5056/kryto/api/v1/auth
+- http://localhost:5056/krysto/api/v1/requests
+- http://localhost:5056/krysto/api/v1/articles
+- http://localhost:5056/krysto/api/v1/collects
+- http://localhost:5056/krysto/api/v1/plasticTypes
+- http://localhost:5056/krysto/api/v1/partners
 
 
 

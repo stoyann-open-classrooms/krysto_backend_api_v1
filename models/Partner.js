@@ -76,15 +76,12 @@ const PartnerSchema = new mongoose.Schema(
       default: "no-photo.jpg",
     },
     recycled: Number,
-    // createdAt: {
-    //   type: Date,
-    //   default: Date.now,
-    // },
-    // user: {
-    //   type: mongoose.Schema.ObjectId,
-    //   ref: "User",
-    //   required: true,
-    // },
+
+    user: {
+      type: mongoose.Schema.ObjectId,
+      ref: "User",
+      required: true,
+    },
   },
   { timestamps: true },
   {

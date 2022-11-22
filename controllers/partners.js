@@ -26,10 +26,21 @@ exports.getPartner = asyncHandler(async (req, res, next) => {
   res.status(200).json({ success: true, data: partner });
 });
 
-//@description:     Create a partner
+//@description:     Create new partner
 //@ route:          POST /krysto/api/v1/partners
 //@access:          Private
 exports.createPartner = asyncHandler(async (req, res, next) => {
+  // Add user to req.body
+  req.body.user = req.user.id
+  
+  // Check for published partner
+  const  publishedPartner = await Partner.findOne({user: req.user.id})
+  
+  // If the user is not an admin, they can only add one partner
+  if(publishedPartner && req.user.role != 'admin') {
+    return next(new ErrorResponse(`The user with ID ${req.user.id} has already published a partner`, 400))
+  }
+
   const partner = await Partner.create(req.body);
   res.status(201).json({
     success: true,
