@@ -32,6 +32,7 @@ const collects = require("./routes/collects");
 const plasticTypes = require("./routes/plastic_types");
 const auth = require("./routes/auth");
 const users = require("./routes/users");
+const reviews = require("./routes/reviews");
 // initialize express  application
 const app = express();
 
@@ -89,6 +90,7 @@ app.use("/krysto/api/v1/collects", collects);
 app.use("/krysto/api/v1/plasticTypes", plasticTypes);
 app.use("/krysto/api/v1/auth", auth);
 app.use("/krysto/api/v1/users", users);
+app.use("/krysto/api/v1/reviews", reviews);
 
 app.use(errorHandler)
 

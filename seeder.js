@@ -10,6 +10,7 @@ dotenv.config({ path: './config/config.env' });
 const Partner = require('./models/Partner');
 const User = require('./models/User');
 const Article = require('./models/Article');
+const Review = require('./models/Review');
 const Plastic_type = require('./models/Plastic_type');
 const Collect = require('./models/Collect');
 const Request = require('./models/Request');
@@ -31,6 +32,9 @@ const users = JSON.parse(
 const articles = JSON.parse(
   fs.readFileSync(`${__dirname}/_data/articles.json`, 'utf-8')
 );
+const reviews = JSON.parse(
+  fs.readFileSync(`${__dirname}/_data/reviews.json`, 'utf-8')
+);
 const plastic_types = JSON.parse(
   fs.readFileSync(`${__dirname}/_data/plastic_types.json`, 'utf-8')
 );
@@ -49,6 +53,7 @@ const importData = async () => {
     await Partner.create(partners);
     await User.create(users);
     await Article.create(articles);
+    await Review.create(reviews);
     await Plastic_type.create(plastic_types);
     await Collect.create(collects);
     await Request.create(requests);
@@ -65,6 +70,7 @@ const deleteData = async () => {
     await Partner.deleteMany();
     await User.deleteMany();
     await Article.deleteMany();
+    await Review.deleteMany();
     await Plastic_type.deleteMany();
     await Collect.deleteMany();
     await Request.deleteMany();

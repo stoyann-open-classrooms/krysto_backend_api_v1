@@ -62,7 +62,7 @@ CollectSchema.statics.getAverageCost = async function(partnerId) {
   console.log('calculating the average cost...'.blue);
   const obj = await this.aggregate([
     {
-      $match: { partner: partnerId }
+      $match: { partner : partnerId }
     },
     {
       $group: {
@@ -75,7 +75,7 @@ CollectSchema.statics.getAverageCost = async function(partnerId) {
 
   try {
     await this.model('Partner').findByIdAndUpdate(partnerId, {
-      recycled: Math.ceil(obj[0].recycled / 10) * 10
+      recycled: obj[0].recycled
     });
   } catch (err) {
     console.error(err);

@@ -16,6 +16,11 @@ const ArticleSchema = new mongoose.Schema(
       required: [true, "Please add description"],
       maxlength: [1000, "Name can not be more than 500 characters"],
     },
+    averageRating: {
+      type: Number,
+      min: [1, 'Rating must be at least 1'],
+      max: [10, 'Rating must can not be more than 10']
+    },
     price: Number,
     weight_GR: Number,
     stock: Number,
