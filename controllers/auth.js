@@ -131,7 +131,7 @@ exports.forgotPassword = asyncHandler(async (req, res, next) => {
   // Create reset url
   const resetUrl = `${req.protocol}://${req.get(
     "host"
-  )}/api/v1/auth/resetpassword/${resetToken}`;
+  )}/krysto/api/v1/auth/resetpassword/${resetToken}`;
 
   const message = `
   Vous recevez cet e-mail car vous (ou quelqu'un d'autre) avez demandé la réinitialisation d'un mot de passe. Veuillez faire une demande  à : \n\n ${resetUrl}`;
