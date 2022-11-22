@@ -1,7 +1,7 @@
 # KANBAN API  - backend de l'application
 
-🕘🕙🕚 Documentation en cours de rédaction 🕘🕙🕚
-
+https://documenter.getpostman.com/view/24434461/2s8YsnWato
+Pour acceder a la documentation de l'API : [cliquer ici](https://duckduckgo.com).
 ## Clonez le projet
 ``` 
 $ git clone https://github.com/stoyann-open-classrooms/krysto_backend_api_v1.git
