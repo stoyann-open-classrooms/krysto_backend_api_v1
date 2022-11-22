@@ -1,25 +1,159 @@
 [
     {
       "_id": "637a3694e5fc335f796a4960",
-      "name": "peigne de plage",
-      "refference": "PL8975",
-      "description": "Peigne de plage  petit modèle",
-      "price": 800,
-      "weight_GR": 12,
+      "name": "Poutre 40 x 40",
+      "refference": "POT001",
+      "length_CM": 200,
+      "description": "Grande poutre 40 x 40 mm",
+      "price": 2200,
+      "weight_GR": 2000,
       "stock":340,
       "colors": ["Mother Earth", "Sky blue", "Purple Nebula", "Dark matter", "Solar Flare", "Galaxy Zero", "Jupiter Storm"],
-      "category": ["Mode"]
+      "category": [ "Construction"]
     },
     {
       "_id": "637a3694e5fc335f796a4962",
-      "name": "banc de jardin",
-      "refference": "BJ8975",
-      "description": "Banc de jardin en Kit",
-      "price": 25000,
-      "weight_GR": 50000,
+      "name": "planche 100 x 40 mm",
+      "refference": "PLGM001",
+      "description": "Grande planche 100 x 40 mm",
+      "price": 2800,
+      "weight_GR": 5000,
       "stock":50,
-      "colors": ["Mother Earth", "Sky blue"],
-      "category": ["décoration interieur", "Construction"]
+      "colors": ["Mother Earth", "Sky blue", "Purple Nebula", "Dark matter", "Solar Flare", "Galaxy Zero", "Jupiter Storm"],
+      "category": [ "Construction"]
+    },
+    {
+      "_id": "637a3694e5fc335f796a4963",
+      "name": "poutre 40 x 40 mm",
+      "refference": "POUT001",
+      "description": "Grande planche 100 x 40 mm",
+      "price": 2800,
+      "weight_GR": 1200,
+      "stock":50,
+      "colors": ["Mother Earth", "Sky blue", "Purple Nebula", "Dark matter", "Solar Flare", "Galaxy Zero", "Jupiter Storm"],
+      "category": [ "Construction"]
+    },
+   
+    {
+      "_id": "637a3694e5fc335f796a4964",
+      "name": "poutre traverse 30°",
+      "refference": "PTT001",
+      "description": "Poutre traverse angle 30 degres",
+      "price": 900,
+      "weight_GR": 2500,
+      "stock":50,
+      "colors": ["Mother Earth", "Sky blue", "Purple Nebula", "Dark matter", "Solar Flare", "Galaxy Zero", "Jupiter Storm"],
+      "category": [ "Construction"]
+    },
+    {
+      "_id": "637a3694e5fc335f796a4965",
+      "name": "poutre traverse 90°",
+      "refference": "PTT002",
+      "description": "Poutre traverse angle 90 degres",
+      "price": 1100,
+      "weight_GR": 3500,
+      "stock":50,
+      "colors": ["Mother Earth", "Sky blue", "Purple Nebula", "Dark matter", "Solar Flare", "Galaxy Zero", "Jupiter Storm"],
+      "category": [ "Construction"]
+    },
+    {
+      "_id": "637a3694e5fc335f796a4966",
+      "name": "Krysto Baiau",
+      "refference": "LBA003",
+      "description": "Monture de Lunettes Baiau",
+      "price": "4000",
+      "weight_GR": 150,
+      "stock":50,
+      "colors": ["Mother Earth", "Sky blue", "Purple Nebula", "Dark matter", "Solar Flare", "Galaxy Zero", "Jupiter Storm"],
+      "category": [ "Mode"]
+    },
+    {
+      "_id": "637a3694e5fc335f796a4967",
+      "name": "Krysto Sotllo",
+      "refference": "LSOT003",
+      "description": "Monture de Lunettes Sotllo",
+      "price": "4000",
+      "weight_GR": 150,
+      "stock":50,
+      "colors": ["Mother Earth", "Sky blue", "Purple Nebula", "Dark matter", "Solar Flare", "Galaxy Zero", "Jupiter Storm"],
+      "category": [ "Mode"]
+    },
+    {
+      "_id": "637a3694e5fc335f796a4968",
+      "name": "Krysto Certascan",
+      "refference": "LCER003",
+      "description": "Monture de Lunettes Certascan",
+      "price": "4000",
+      "weight_GR": 150,
+      "stock":50,
+      "colors": ["Mother Earth", "Sky blue", "Purple Nebula", "Dark matter", "Solar Flare", "Galaxy Zero", "Jupiter Storm"],
+      "category": [ "Mode"]
+    },
+    {
+      "_id": "637a3694e5fc335f796a4969",
+      "name": "Hexagone tiles",
+      "refference": "THEXR001",
+      "description": "Carrelage crédence hexagone",
+      "price": "400",
+      "weight_GR": 37,
+      "stock":500,
+      "colors": ["Mother Earth", "Sky blue", "Purple Nebula", "Dark matter", "Solar Flare", "Galaxy Zero", "Jupiter Storm"],
+      "category": [ "décoration interieur","Construction"]
+    },
+    {
+      "_id": "637a3694e5fc335f796a4970",
+      "name": "Round tiles",
+      "refference": "TROU001",
+      "description": "Carrelage crédence rond",
+      "price": "400",
+      "weight_GR": 37,
+      "stock":500,
+      "colors": ["Mother Earth", "Sky blue", "Purple Nebula", "Dark matter", "Solar Flare", "Galaxy Zero", "Jupiter Storm"],
+      "category": [ "décoration interieur","Construction"]
+    },
+    {
+      "_id": "637a3694e5fc335f796a4971",
+      "name": "Square tiles",
+      "refference": "TCAR001",
+      "description": "Carrelage crédence carée",
+      "price": "400",
+      "weight_GR": 37,
+      "stock":500,
+      "colors": ["Mother Earth", "Sky blue", "Purple Nebula", "Dark matter", "Solar Flare", "Galaxy Zero", "Jupiter Storm"],
+      "category": [ "décoration interieur","Construction"]
+    },
+    {
+      "_id": "637a3694e5fc335f796a4972",
+      "name": "Stylos bleu",
+      "refference": "STBL001",
+      "description": "Stylos couleurs bleu",
+      "price": "1100",
+      "weight_GR": 10,
+      "stock":500,
+      "colors": ["Mother Earth", "Sky blue", "Purple Nebula", "Dark matter", "Solar Flare", "Galaxy Zero", "Jupiter Storm"],
+      "category": [  "Objet du quotidient"]
+    },
+    {
+      "_id": "637a3694e5fc335f796a4973",
+      "name": "Stylos noir",
+      "refference": "STNO001",
+      "description": "Stylos couleurs noir",
+      "price": "1100",
+      "weight_GR": 10,
+      "stock":500,
+      "colors": ["Mother Earth", "Sky blue", "Purple Nebula", "Dark matter", "Solar Flare", "Galaxy Zero", "Jupiter Storm"],
+      "category": [  "Objet du quotidient"]
+    },
+    {
+      "_id": "637a3694e5fc335f796a4974",
+      "name": "Stylos rouge",
+      "refference": "STRO001",
+      "description": "Stylos couleurs rouge",
+      "price": "1100",
+      "weight_GR": 10,
+      "stock":500,
+      "colors": ["Mother Earth", "Sky blue", "Purple Nebula", "Dark matter", "Solar Flare", "Galaxy Zero", "Jupiter Storm"],
+      "category": [  "Objet du quotidient"]
     }
    
 ]

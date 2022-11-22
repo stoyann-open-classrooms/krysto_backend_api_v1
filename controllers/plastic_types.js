@@ -6,16 +6,10 @@ const Plastic_type = require("../models/Plastic_type");
 //@ route:          GET /krysto/api/v1/plasticTypes
 //@access:          Public
 exports.getPlasticTypes = asyncHandler(async (req, res, next) => {
-  let query;
-  let queryStr = JSON.stringify(req.query);
-  queryStr.replace(/\b(gt|gte|lt|lte|in)\b/g, match => `$${match}`);
-
-  query = Plastic_type.find(JSON.parse(queryStr));
-
-  const plastic_types = await query;
+ 
   res
     .status(200)
-    .json({ success: true, count: plastic_types.length, data: plastic_types });
+    .json(res.advancedResults);
 });
 
 //@description:     Get a single plastic type

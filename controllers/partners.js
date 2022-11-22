@@ -1,3 +1,4 @@
+const path = require('path')
 const ErrorResponse = require("../utils/errorResponse");
 const asyncHandler = require("../middlewares/async");
 const geocoder = require("../utils/geocoder");
@@ -7,16 +8,9 @@ const Partner = require("../models/Partner");
 //@ route:          GET /krysto/api/v1/partners
 //@access:          Public
 exports.getPartners = asyncHandler(async (req, res, next) => {
-  let query;
-  let queryStr = JSON.stringify(req.query);
-  queryStr.replace(/\b(gt|gte|lt|lte|in)\b/g, match => `$${match}`);
-
-  query = Partner.find(JSON.parse(queryStr)).populate('requests');
-
-  const partners = await query;
+ 
   res
-    .status(200)
-    .json({ success: true, count: partners.length, data: partners });
+    .status(200).json(res.advancedResults);
 });
 
 //@description:     Get a single partner
@@ -96,5 +90,68 @@ exports.getPartnersInRadius = asyncHandler(async (req, res, next) => {
     success: true,
     count: partners.length,
     data: partners,
+  });
+});
+
+
+
+// @desc      Upload photo for partner
+// @route     PUT /api/v1/partners/:id/photo
+// @access    Private
+exports.partnerPhotoUpload = asyncHandler(async (req, res, next) => {
+  const partner = await Partner.findById(req.params.id);
+
+  if (!partner) {
+    return next(
+      new ErrorResponse(`Bootcamp not found with id of ${req.params.id}`, 404)
+    );
+  }
+
+  // // Make sure user is bootcamp owner
+  // if (partner.user.toString() !== req.user.id && req.user.role !== 'admin') {
+  //   return next(
+  //     new ErrorResponse(
+  //       `user ${req.params.id} is not authorized to update this partner`,
+  //       401
+  //     )
+  //   );
+  // }
+
+  if (!req.files) {
+    return next(new ErrorResponse(`Please upload a file`, 400));
+  }
+
+  const file = req.files.file;
+
+  // Make sure the image is a photo
+  if (!file.mimetype.startsWith('image')) {
+    return next(new ErrorResponse(`Please upload an image file`, 400));
+  }
+
+  // Check filesize
+  if (file.size > process.env.MAX_FILE_UPLOAD) {
+    return next(
+      new ErrorResponse(
+        `Please upload an image less than ${process.env.MAX_FILE_UPLOAD}`,
+        400
+      )
+    );
+  }
+
+  // Create custom filename
+  file.name = `photo_${partner._id}${path.parse(file.name).ext}`;
+
+  file.mv(`${process.env.FILE_UPLOAD_PATH}/${file.name}`, async err => {
+    if (err) {
+      console.error(err);
+      return next(new ErrorResponse(`Problem with file upload`, 500));
+    }
+
+    await Partner.findByIdAndUpdate(req.params.id, { photo: file.name });
+
+    res.status(200).json({
+      success: true,
+      data: file.name
+    });
   });
 });

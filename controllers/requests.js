@@ -9,25 +9,8 @@ const Partner = require("../models/Partner");
 //@access:          Public
 
 exports.getRequests = asyncHandler(async (req, res, next) => {
-  let query;
-
-  if (req.params.partnerId) {
-    query = Request.find({ partner: req.params.partnerId }).populate({
-      path: "partner",
-      select: "name phone email location",
-    });
-  } else {
-    query = Request.find().populate({
-      path: "partner",
-      select: "name phone email location",
-    });
-  }
-  const requests = await query;
-  res.status(200).json({
-    success: true,
-    count: requests.length,
-    data: requests,
-  });
+ 
+  res.status(200).json(res.advancedResults);
 });
 
 //@description:     Get single request

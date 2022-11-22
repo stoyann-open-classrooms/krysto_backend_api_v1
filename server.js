@@ -1,7 +1,9 @@
 // dependency
+const path = require('path')
 const express = require("express");
 const dotenv = require("dotenv");
 const colors = require("colors");
+const fileupload = require("express-fileupload")
 //import middlewares
 const morgan = require("morgan");
 const errorHandler= require('./middlewares/error.js')
@@ -33,6 +35,15 @@ app.use(express.json())
 if (process.env.NODE_ENV === "development") {
   app.use(morgan("dev"));
 }
+
+
+// File uploading 
+app.use(fileupload())
+
+//set static folder 
+app.use(express.static(path.join(__dirname, 'public')))
+
+
 
 //Mount routers
 app.use("/krysto/api/v1/partners", partners);

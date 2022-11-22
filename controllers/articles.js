@@ -6,16 +6,10 @@ const Article = require("../models/Article");
 //@ route:          GET /krysto/api/v1/articles
 //@access:          Public
 exports.getArticles = asyncHandler(async (req, res, next) => {
-  let query;
-  let queryStr = JSON.stringify(req.query);
-  queryStr.replace(/\b(gt|gte|lt|lte|in)\b/g, match => `$${match}`);
-
-  query = Article.find(JSON.parse(queryStr));
-
-  const articles = await query;
+ 
   res
     .status(200)
-    .json({ success: true, count: articles.length, data: articles });
+    .json(res.advancedResults);
 });
 
 //@description:     Get a single article

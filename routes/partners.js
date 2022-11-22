@@ -7,7 +7,12 @@ const {
   updatePartner,
   deletePartner,
   getPartnersInRadius,
+  partnerPhotoUpload,
 } = require("../controllers/partners");
+
+
+const Partner = require('../models/Partner')
+const advancedResults = require('../middlewares/advancedResults')
 
 // Includes other ressource routers
 const requestRouter = require('./requests')
@@ -19,7 +24,8 @@ router.use('/:partnerId/requests', requestRouter)
 router.use('/:partnerId/collects', collectRouter)
 
 router.route("/radius/:zipcode/:distance").get(getPartnersInRadius);
-router.route("/").get( getPartners).post(createPartner);
+router.route("/").get(advancedResults(Partner), getPartners).post(createPartner);
 router.route("/:id").get(getPartner).put(updatePartner).delete(deletePartner);
+router.route('/:id/photo').put(partnerPhotoUpload)
 
 module.exports = router;

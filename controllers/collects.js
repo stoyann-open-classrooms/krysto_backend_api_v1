@@ -11,25 +11,8 @@ const Request = require("../models/Request");
 //@access:          Public
 
 exports.getCollects = asyncHandler(async (req, res, next) => {
-  let query;
 
-  if (req.params.partnerId) {
-    query = Collect.find({ partner: req.params.partnerId }).populate({
-      path: "plastic_type",
-      select: "name",
-    });
-  } else {
-    query = Collect.find().populate({
-      path: "partner",
-      select: "name phone email location",
-    });
-  }
-  const collects = await query;
-  res.status(200).json({
-    success: true,
-    count: collects.length,
-    data: collects,
-  });
+  res.status(200).status(200).json(res.advancedResults);
 });
 
 //@description:     Get single collect
