@@ -2,16 +2,19 @@
     {
       "_id": "637a2e4122b1269042004125",
       "description": "Contrairement à une opinion répandue, le Lorem Ipsum n'est pas simplement du texte aléatoire. Il trouve ses racines dans une oeuvre de la littérature latine classique datant de 45 av. J.-C., le rendant vieux de 2000 ans.",
-      "partner": "637a2e4122b12690420041a6"
+      "partner": "637a2e4122b12690420041a8",
+      "user": "5d7a514b5d2c12c7449be045"
     },
     {
       "_id": "637a2e4122b1269042004126",
-      "partner": "637a2e4122b12690420041a8"
+      "partner": "637a2e4122b12690420041a8",
+      "user": "5d7a514b5d2c12c7449be045"
     },
     {
       "_id": "637a2e4122b1269042004127",
       "description": " Il utilise un dictionnaire de plus de 200 mots latins, en combinaison de plusieurs structures de phrases, pour générer un Lorem Ipsum irréprochable. Le Lorem Ipsum ainsi obtenu ne contient aucune répétition, ni ne contient des mots farfelus, ou des touches d'humour.",
-      "partner": "637a2e4122b12690420041a8"
+      "partner": "637a2e4122b12690420041a8",
+      "user": "5d7a514b5d2c12c7449be045"
     }
    
   ]

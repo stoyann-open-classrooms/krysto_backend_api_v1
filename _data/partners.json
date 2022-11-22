@@ -1,6 +1,7 @@
 [
   {
     "_id": "637a2e4122b12690420041a6",
+    "user": "5d7a514b5d2c12c7449be045",
     "name": "Caledoclean",
     "description": "Association qui milite pour la transition écologique afin de préserver efficacement et durablement le droit à un environnement sain pour toutes et tous y compris pour les plus démunis et les plus vulnérables au changement climatique.",
     "website": "https://caledoclean.nc/",
@@ -11,6 +12,7 @@
   },
   {
     "_id": "637a3071fcf9ca4e26104dc3",
+    "user": "5d7a514b5d2c12c7449be046",
     "name": "Olétri",
     "description": "OléTRI est un réseau solidaire de collecte des déchets qui a comme ambition de créer une communauté active au sein de laquelle tout le monde peut agir et s’investir pour l’environnement et le recyclage des déchets à son échelle, en fonction de ses capacités et de ses disponibilités.",
     "website": "https://www.oletri.nc/",
@@ -21,6 +23,7 @@
   },
   {
     "_id": "637a2e4122b12690420041a8",
+    "user": "5c8a1d5b0190b214360dc031",
     "name": "Réseaux Initiative Nouvelle-Calédonie",
     "description": "L’accompagnement proposé par Réseau Initiative Nouvelle-Calédonie est personnalisé : chaque projet est unique, chaque porteur de projet ouvre la porte de l’association quel que soit l’état d’avancement de son projet, Réseau Initiative Nouvelle-Calédonie l’oriente, lui apporte des réponses adaptées et lui propose un accompagnement sur mesure.",
     "website": "https://initiative-nc.com/",
@@ -33,6 +36,7 @@
   },
   {
     "_id": "637a3694e5fc335f796a4952",
+    "user": "5c8a1d5b0190b214360dc032",
     "name": "Chambre de commerce et d'industrie NC",
     "description": "La CCI-NC agit pour développer la prospérité économique de la Nouvelle-Calédonie.Elle représente et défend les intérêts de ses ressortissants issus des secteurs du commerce, de l'industrie et des services. ",
     "website": "https://www.cci.nc/",

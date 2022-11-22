@@ -1,4 +1,4 @@
-const path = require('path')
+const path = require("path");
 const ErrorResponse = require("../utils/errorResponse");
 const asyncHandler = require("../middlewares/async");
 const geocoder = require("../utils/geocoder");
@@ -8,9 +8,7 @@ const Partner = require("../models/Partner");
 //@ route:          GET /krysto/api/v1/partners
 //@access:          Public
 exports.getPartners = asyncHandler(async (req, res, next) => {
- 
-  res
-    .status(200).json(res.advancedResults);
+  res.status(200).json(res.advancedResults);
 });
 
 //@description:     Get a single partner
@@ -31,14 +29,19 @@ exports.getPartner = asyncHandler(async (req, res, next) => {
 //@access:          Private
 exports.createPartner = asyncHandler(async (req, res, next) => {
   // Add user to req.body
-  req.body.user = req.user.id
-  
+  req.body.user = req.user.id;
+
   // Check for published partner
-  const  publishedPartner = await Partner.findOne({user: req.user.id})
-  
+  const publishedPartner = await Partner.findOne({ user: req.user.id });
+
   // If the user is not an admin, they can only add one partner
-  if(publishedPartner && req.user.role != 'admin') {
-    return next(new ErrorResponse(`The user with ID ${req.user.id} has already published a partner`, 400))
+  if (publishedPartner && req.user.role != "admin") {
+    return next(
+      new ErrorResponse(
+        `The user with ID ${req.user.id} has already published a partner`,
+        400
+      )
+    );
   }
 
   const partner = await Partner.create(req.body);
@@ -52,15 +55,27 @@ exports.createPartner = asyncHandler(async (req, res, next) => {
 //@ route:          PUT /krysto/api/v1/partners/:id
 //@access:          Private
 exports.updatePartner = asyncHandler(async (req, res, next) => {
-  const partner = await Partner.findByIdAndUpdate(req.params.id, req.body, {
-    new: true,
-    runValidators: true,
-  });
+  let partner = await Partner.findById(req.params.id, req.body);
   if (!partner) {
     return next(
       new ErrorResponse(`Partner not found with ID of ${req.params.id}`, 404)
     );
   }
+
+  // Make sure user is partner owner
+  if (partner.user.toString() !== req.user.id && req.user.role !== admin) {
+    return next(
+      new ErrorResponse(
+        `The user with ID ${req.user.id} is not authorize to update this partner`,
+        401
+      )
+    );
+  }
+
+  partner = await Partner.findByOneUpdate(req.params.id, req.body, {
+    new: true,
+    runValidators: true,
+  });
   res.status(200).json({ success: true, data: partner });
 });
 
@@ -68,12 +83,26 @@ exports.updatePartner = asyncHandler(async (req, res, next) => {
 //@ route:          DELETE /krysto/api/v1/partners/:id
 //@access:          Private
 exports.deletePartner = asyncHandler(async (req, res, next) => {
-  const partner = await Partner.findByIdAndDelete(req.params.id);
+  const partner = await Partner.findById(req.params.id);
+
   if (!partner) {
     return next(
       new ErrorResponse(`Partner not found with ID of ${req.params.id}`, 404)
     );
   }
+
+  // Make sure user is partner owner
+  if (partner.user.toString() !== req.user.id && req.user.role !== admin) {
+    return next(
+      new ErrorResponse(
+        `The user with ID ${req.user.id} is not authorize to update this partner`,
+        401
+      )
+    );
+  }
+
+  partner.remove();
+
   res.status(200).json({ success: true, data: {} });
 });
 
@@ -104,8 +133,6 @@ exports.getPartnersInRadius = asyncHandler(async (req, res, next) => {
   });
 });
 
-
-
 // @desc      Upload photo for partner
 // @route     PUT /api/v1/partners/:id/photo
 // @access    Private
@@ -118,15 +145,15 @@ exports.partnerPhotoUpload = asyncHandler(async (req, res, next) => {
     );
   }
 
-  // // Make sure user is bootcamp owner
-  // if (partner.user.toString() !== req.user.id && req.user.role !== 'admin') {
-  //   return next(
-  //     new ErrorResponse(
-  //       `user ${req.params.id} is not authorized to update this partner`,
-  //       401
-  //     )
-  //   );
-  // }
+  // Make sure user is partner owner
+  if (partner.user.toString() !== req.user.id && req.user.role !== 'admin') {
+    return next(
+      new ErrorResponse(
+        `user ${req.params.id} is not authorized to update this partner`,
+        401
+      )
+    );
+  }
 
   if (!req.files) {
     return next(new ErrorResponse(`Please upload a file`, 400));
@@ -135,7 +162,7 @@ exports.partnerPhotoUpload = asyncHandler(async (req, res, next) => {
   const file = req.files.file;
 
   // Make sure the image is a photo
-  if (!file.mimetype.startsWith('image')) {
+  if (!file.mimetype.startsWith("image")) {
     return next(new ErrorResponse(`Please upload an image file`, 400));
   }
 
@@ -152,7 +179,7 @@ exports.partnerPhotoUpload = asyncHandler(async (req, res, next) => {
   // Create custom filename
   file.name = `photo_${partner._id}${path.parse(file.name).ext}`;
 
-  file.mv(`${process.env.FILE_UPLOAD_PATH}/${file.name}`, async err => {
+  file.mv(`${process.env.FILE_UPLOAD_PATH}/${file.name}`, async (err) => {
     if (err) {
       console.error(err);
       return next(new ErrorResponse(`Problem with file upload`, 500));
@@ -162,7 +189,7 @@ exports.partnerPhotoUpload = asyncHandler(async (req, res, next) => {
 
     res.status(200).json({
       success: true,
-      data: file.name
+      data: file.name,
     });
   });
 });
