@@ -32,7 +32,6 @@ const requests = require("./routes/requests");
 const collects = require("./routes/collects");
 const plasticTypes = require("./routes/plastic_types");
 const auth = require("./routes/auth");
-
 // initialize express  application
 const app = express();
 

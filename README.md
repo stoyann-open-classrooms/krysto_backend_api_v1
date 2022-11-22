@@ -27,12 +27,12 @@ l'api est disponible sur le port 5000
 
 
 ### `Exemples de routes`
-- http://localhost:5000/api/v1/auth
-- http://localhost:5000/api/v1/requests
-- http://localhost:5000/api/v1/articles
-- http://localhost:5000/api/v1/collects
-- http://localhost:5000/api/v1/plasticTypes
-- http://localhost:5000/api/v1/partners
+- http://localhost:5000/kryto/api/v1/auth
+- http://localhost:5000/krysto/api/v1/requests
+- http://localhost:5000/krysto/api/v1/articles
+- http://localhost:5000/krysto/api/v1/collects
+- http://localhost:5000/krysto/api/v1/plasticTypes
+- http://localhost:5000/krysto/api/v1/partners
 
 
 
