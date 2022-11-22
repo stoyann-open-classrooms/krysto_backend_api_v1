@@ -1,13 +1,18 @@
 # KANBAN API  - backend de l'application
 
 
-Pour acceder a la documentation de l'API : [cliquer ici](https://duckduckgo.com).
+Pour acceder a la documentation de l'API : [cliquer ici](https://documenter.getpostman.com/view/24434461/2s8YsnWato).
+
+
+
+## Demarer l'application en local 
+
+
 ## Clonez le projet
 ``` 
 $ git clone https://github.com/stoyann-open-classrooms/krysto_backend_api_v1.git
 ```
 
-## lancer l'app 
 
 ### Installez les packages npm (décrits dans `package.json`) :
 
