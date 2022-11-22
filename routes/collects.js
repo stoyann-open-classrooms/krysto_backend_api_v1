@@ -9,10 +9,10 @@ const {
 } = require("../controllers/collects");
 const router = express.Router({ mergeParams: true });
 
+const {protect, authorize} = require('../middlewares/auth')
 
 const Collect = require("../models/Collect");
 const advancedResults = require("../middlewares/advancedResults");
-
 
 router
   .route("/")
@@ -23,7 +23,7 @@ router
     }),
     getCollects
   )
-  .post( addCollect);
-router.route("/:id").get(getCollect).put( updateCollect).delete( deleteCollect);
+  .post( protect, addCollect);
+router.route("/:id").get(getCollect).put(protect, updateCollect).delete( protect, deleteCollect);
 
 module.exports = router;

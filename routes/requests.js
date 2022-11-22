@@ -7,13 +7,13 @@ const advancedResults = require('../middlewares/advancedResults')
 
 
 const router = express.Router({mergeParams: true});
-const {protect} = require("../middlewares/auth")
+const {protect, authorize} = require("../middlewares/auth")
 
 
 
 
-router.route('/').get(advancedResults(Request, 'partner'), getRequests).post(addRequest)
-router.route('/:id').get(getRequest).put( updateRequest).delete( deleteRequest)
+router.route('/').get(advancedResults(Request, 'partner'), getRequests).post( protect, addRequest)
+router.route('/:id').get(getRequest).put( protect, updateRequest).delete( protect, deleteRequest)
 
 
 module.exports = router;
