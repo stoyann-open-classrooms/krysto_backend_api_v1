@@ -11,8 +11,17 @@ const Request = require("../models/Request");
 //@access:          Public
 
 exports.getCollects = asyncHandler(async (req, res, next) => {
+if(req.params.partnerId) {
+  const collects = await Collect.find({partner : req.params.partnerId})
+  return res.status(200).json({
+    success: true,
+    count: collects.length,
+    data: collects
+  })
+} else {
 
   res.status(200).status(200).json(res.advancedResults);
+}
 });
 
 //@description:     Get single collect
