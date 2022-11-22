@@ -26,7 +26,7 @@ $ npm run dev
 l'api est disponible sur le port 5000
 
 
-### Exemples de routes 
+### `Exemples de routes`
 - http://localhost:5000/api/v1/auth
 - http://localhost:5000/api/v1/requests
 - http://localhost:5000/api/v1/articles
