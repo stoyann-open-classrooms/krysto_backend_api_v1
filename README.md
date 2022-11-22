@@ -1,6 +1,6 @@
 # KANBAN API  - backend de l'application
 
-https://documenter.getpostman.com/view/24434461/2s8YsnWato
+
 Pour acceder a la documentation de l'API : [cliquer ici](https://duckduckgo.com).
 ## Clonez le projet
 ``` 
