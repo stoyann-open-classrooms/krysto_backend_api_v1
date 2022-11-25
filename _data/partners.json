@@ -45,6 +45,18 @@
     "address": "15 rue de verdun 98849 Nouméa",
     "type": [ "Institution"]
 
+  },
+  {
+    "_id": "637a3694e5fc335f796a4953",
+    "user": "5c8a1d5b0190b214360dc034",
+    "name": "Optic discount",
+    "description": "Magasin d'optique situé à Nouméa. Ventes de lunettes, lunettes solaires, lentillles, masque de plongée et lunettes de natation. ",
+    "website": "https://www.opticdiscount.nc",
+    "phone": "30.03.40",
+    "email": "cci@cci.nc",
+    "address": "1 rue Anatole France, 98800 Nouméa",
+    "type": [ "Collecte de déchets", "Entreprise economie circulaire", "revendeur" ]
+
   }
 
 ]
