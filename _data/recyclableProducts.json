@@ -1,0 +1,22 @@
+[
+	{
+		"_id": "5d7a514b5d2c12c7449be020",
+		"brand": "Iblank",
+		"own": true,
+		"compagny": true,
+		"description": "contenant des matières premmiere pour fabriquer les verres de lunettes",
+		"recyclingNote": "9",
+		"plastic_type": "637a2e4122b12690420041c1",
+		"partner": "637a3694e5fc335f796a4953"
+	},
+	{
+		"_id": "5d7a514b5d2c12c7449be021",
+		"brand": "Melrose",
+		"own": true,
+		"compagny": true,
+		"description": "ceintres",
+		"recyclingNote": "9",
+		"plastic_type": "637a2e4122b12690420041c1",
+		"partner": "637a3694e5fc335f796a4953"
+	}
+]

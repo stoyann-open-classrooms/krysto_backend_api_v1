@@ -18,10 +18,14 @@ const Recyclable_productSchema = new mongoose.Schema(
     own: {
       type: Boolean,
       default: false,
+      required: true,
+      default: true
     },
     compagny: {
       type: Boolean,
       default: false,
+      required: true,
+      default: false
     },
     slug: String,
     description: {
@@ -53,7 +57,7 @@ const Recyclable_productSchema = new mongoose.Schema(
 
 // create Partner slug from the name
 Recyclable_productSchema.pre("save", function (next) {
-  this.slug = slugify(this.name, { lower: true });
+  this.slug = slugify(this.brand, { lower: true });
   next();
 });
 
