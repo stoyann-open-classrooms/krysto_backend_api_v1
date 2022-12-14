@@ -160,6 +160,7 @@ exports.partnerPhotoUpload = asyncHandler(async (req, res, next) => {
   }
 
   const file = req.files.file;
+  console.log(file);
 
   // Make sure the image is a photo
   if (!file.mimetype.startsWith("image")) {
